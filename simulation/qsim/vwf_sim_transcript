@@ -26,7 +26,7 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Tue Nov 07 12:27:01 2023
+    Info: Processing started: Thu Nov 09 13:43:57 2023
 Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off FrequencyDetector -c FrequencyDetector --vector_source=C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/Waveform.vwf --testbench_file=C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/simulation/qsim/Waveform.vwf.vt
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 
@@ -55,15 +55,15 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Tue Nov 07 12:27:02 2023
+    Info: Processing started: Thu Nov 09 13:43:58 2023
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/simulation/qsim/ FrequencyDetector -c FrequencyDetector
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file FrequencyDetector.vo in folder "C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 4646 megabytes
-    Info: Processing ended: Tue Nov 07 12:27:03 2023
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Processing ended: Thu Nov 09 13:43:58 2023
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
 
 Completed successfully. 
 
@@ -82,32 +82,31 @@ Reading pref.tcl
 # 2020.1
 
 # do FrequencyDetector.do
-
 # ** Warning: (vlib-34) Library already exists at "work".
 
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 12:27:04 on Nov 07,2023
+# Start time: 13:43:59 on Nov 09,2023
 # vlog -work work FrequencyDetector.vo 
 # -- Compiling module FrequencyDetector
 # -- Compiling module hard_block
 # 
 # Top level modules:
 # 	FrequencyDetector
-# End time: 12:27:05 on Nov 07,2023, Elapsed time: 0:00:01
+# End time: 13:43:59 on Nov 09,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 12:27:05 on Nov 07,2023
+# Start time: 13:43:59 on Nov 09,2023
 # vlog -work work Waveform.vwf.vt 
 # -- Compiling module FrequencyDetector_vlg_vec_tst
 # 
 # Top level modules:
 # 	FrequencyDetector_vlg_vec_tst
-# End time: 12:27:05 on Nov 07,2023, Elapsed time: 0:00:00
+# End time: 13:43:59 on Nov 09,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
 # vsim -c -t 1ps -L fiftyfivenm_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.FrequencyDetector_vlg_vec_tst 
-# Start time: 12:27:05 on Nov 07,2023
+# Start time: 13:43:59 on Nov 09,2023
 # Loading work.FrequencyDetector_vlg_vec_tst
 # Loading work.FrequencyDetector
 # Loading work.hard_block
@@ -122,15 +121,16 @@ Reading pref.tcl
 # Loading fiftyfivenm_ver.fiftyfivenm_adcblock
 # Loading altera_ver.PRIM_GDFF_LOW
 # ** Warning: (vsim-2685) [TFMPC] - Too few port connections for '\~QUARTUS_CREATED_ADC1~ '.  Expected 8, found 7.
-#    Time: 0 ps  Iteration: 0  Instance: /FrequencyDetector_vlg_vec_tst/i1/\~QUARTUS_CREATED_ADC1~  File: FrequencyDetector.vo Line: 1709
-# ** Warning: (vsim-3722) FrequencyDetector.vo(1709): [TFMPC] - Missing connection for port 'clk_dft'.
+#    Time: 0 ps  Iteration: 0  Instance: /FrequencyDetector_vlg_vec_tst/i1/\~QUARTUS_CREATED_ADC1~  File: FrequencyDetector.vo Line: 1046
+# ** Warning: (vsim-3722) FrequencyDetector.vo(1046): [TFMPC] - Missing connection for port 'clk_dft'.
 # ** Warning: (vsim-2685) [TFMPC] - Too few port connections for '\~QUARTUS_CREATED_ADC2~ '.  Expected 8, found 7.
-#    Time: 0 ps  Iteration: 0  Instance: /FrequencyDetector_vlg_vec_tst/i1/\~QUARTUS_CREATED_ADC2~  File: FrequencyDetector.vo Line: 1732
-# ** Warning: (vsim-3722) FrequencyDetector.vo(1732): [TFMPC] - Missing connection for port 'clk_dft'.
+#    Time: 0 ps  Iteration: 0  Instance: /FrequencyDetector_vlg_vec_tst/i1/\~QUARTUS_CREATED_ADC2~  File: FrequencyDetector.vo Line: 1069
+# ** Warning: (vsim-3722) FrequencyDetector.vo(1069): [TFMPC] - Missing connection for port 'clk_dft'.
 # after#26
-# ** Note: $finish    : Waveform.vwf.vt(47)
+
+# ** Note: $finish    : Waveform.vwf.vt(49)
 #    Time: 1 us  Iteration: 0  Instance: /FrequencyDetector_vlg_vec_tst
-# End time: 12:27:05 on Nov 07,2023, Elapsed time: 0:00:00
+# End time: 13:43:59 on Nov 09,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 4
 
 Completed successfully. 
@@ -143,9 +143,7 @@ Reading C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/sim
 
 Processing channel transitions... 
 
-Warning: count - signal not found in VCD.
-
-Writing the resulting VWF to C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/simulation/qsim/FrequencyDetector_20231107122705.sim.vwf
+Writing the resulting VWF to C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/simulation/qsim/FrequencyDetector_20231109134359.sim.vwf
 
 Finished VCD to VWF conversion.
 

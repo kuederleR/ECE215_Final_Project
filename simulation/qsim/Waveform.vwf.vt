@@ -19,7 +19,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "11/07/2023 12:27:02"
+// Generated on "11/09/2023 13:43:58"
                                                                                 
 // Verilog Test Bench (with test vectors) for design :                          FrequencyDetector
 // 
@@ -30,36 +30,39 @@
 module FrequencyDetector_vlg_vec_tst();
 // constants                                           
 // general purpose registers
-reg clk;
-reg reset;
+reg device_clock;
+reg input_clock;
 // wires                                               
-wire [25:0] count;
+wire [3:0] cycle_count;
+wire [3:0] frequency;
 
 // assign statements (if any)                          
 FrequencyDetector i1 (
 // port map - connection between master ports and signals/registers   
-	.clk(clk),
-	.count(count),
-	.reset(reset)
+	.cycle_count(cycle_count),
+	.device_clock(device_clock),
+	.frequency(frequency),
+	.input_clock(input_clock)
 );
 initial 
 begin 
 #1000000 $finish;
 end 
 
-// clk
+// device_clock
 always
 begin
-	clk = 1'b0;
-	clk = #10000 1'b1;
+	device_clock = 1'b0;
+	device_clock = #10000 1'b1;
 	#10000;
 end 
 
-// reset
-initial
+// input_clock
+always
 begin
-	reset = 1'b0;
-	reset = #20000 1'b1;
+	input_clock = 1'b0;
+	input_clock = #20000 1'b1;
+	#20000;
 end 
 endmodule
 

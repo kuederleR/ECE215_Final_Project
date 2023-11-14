@@ -10,23 +10,23 @@ z2
 cModel Technology
 Z0 dC:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/simulation/qsim
 vFrequencyDetector
-Z1 !s110 1699378025
+Z1 !s110 1699555439
 !i10b 1
-!s100 D7H`LYDzYM6HUUomZAc1k3
+!s100 R0=ha]?hIS7O3Y[FLzagS3
 Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
-I`1zXA@OT3LJTlRN4CRRLj1
+I[B9jZ6PC`I:L84:8jX]Um0
 Z3 VDg1SIo80bB@j0V0VzS_@n1
 R0
-Z4 w1699378023
+Z4 w1699555438
 Z5 8FrequencyDetector.vo
 Z6 FFrequencyDetector.vo
-!i122 10
-L0 32 1775
+!i122 122
+L0 32 1076
 Z7 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z8 !s108 1699378024.000000
+Z8 !s108 1699555439.000000
 Z9 !s107 FrequencyDetector.vo|
 Z10 !s90 -work|work|FrequencyDetector.vo|
 !i113 1
@@ -36,21 +36,21 @@ n@frequency@detector
 vFrequencyDetector_vlg_vec_tst
 R1
 !i10b 1
-!s100 CW3hMgX@N1EQzE<Aj59@13
+!s100 >eE[L_B[Ca6@@1B::Pe5Q0
 R2
-IVZ<LhiWA>]Pa6B3h7Jzf@2
+IL1DFL:LC0Qc29L88k_L0R3
 R3
 R0
-w1699378022
+R4
 8Waveform.vwf.vt
 FWaveform.vwf.vt
-!i122 11
-L0 30 35
+!i122 123
+L0 30 38
 R7
 r1
 !s85 0
 31
-!s108 1699378025.000000
+R8
 !s107 Waveform.vwf.vt|
 !s90 -work|work|Waveform.vwf.vt|
 !i113 1
@@ -60,16 +60,16 @@ n@frequency@detector_vlg_vec_tst
 vhard_block
 R1
 !i10b 1
-!s100 i31jXenbicZUdWHC6QMZ21
+!s100 ZOnZ@mU4ezmM1Ll3UAa0K3
 R2
-I7Ym6HIn64X>fS_Abk?XM73
+I:_WUg34<gYO9o174;^P0H3
 R3
 R0
 R4
 R5
 R6
-!i122 10
-L0 1808 45
+!i122 122
+L0 1109 45
 R7
 r1
 !s85 0
