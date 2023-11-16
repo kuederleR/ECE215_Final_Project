@@ -2,48 +2,7 @@
 	"partitions" : [
 		{
 			"name" : "Top",
-			"pins" : [
-				{
-					"name" : "cycle_count[0]",
-					"strict" : false
-				},
-				{
-					"name" : "cycle_count[1]",
-					"strict" : false
-				},
-				{
-					"name" : "cycle_count[2]",
-					"strict" : false
-				},
-				{
-					"name" : "cycle_count[3]",
-					"strict" : false
-				},
-				{
-					"name" : "frequency[0]",
-					"strict" : false
-				},
-				{
-					"name" : "frequency[1]",
-					"strict" : false
-				},
-				{
-					"name" : "frequency[2]",
-					"strict" : false
-				},
-				{
-					"name" : "frequency[3]",
-					"strict" : false
-				},
-				{
-					"name" : "input_clock",
-					"strict" : false
-				},
-				{
-					"name" : "device_clock",
-					"strict" : false
-				}
-			]
+			"pins" : []
 		}
 	]
 }

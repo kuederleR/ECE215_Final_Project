@@ -1,5 +1,5 @@
 Analysis & Synthesis report for FrequencyDetector
-Tue Nov 14 11:39:06 2023
+Thu Nov 16 12:13:21 2023
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -10,7 +10,20 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1
+ 12. Parameter Settings for Inferred Entity Instance: lpm_divide:Div2
+ 13. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
+ 14. Parameter Settings for Inferred Entity Instance: lpm_divide:Div1
+ 15. Parameter Settings for Inferred Entity Instance: lpm_divide:Div0
+ 16. Post-Synthesis Netlist Statistics for Top Partition
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
 
 
 
@@ -37,22 +50,22 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Tue Nov 14 11:39:06 2023           ;
+; Analysis & Synthesis Status        ; Successful - Thu Nov 16 12:13:21 2023       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; FrequencyDetector                           ;
 ; Top-level Entity Name              ; FrequencyDetector                           ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; N/A until Partition Merge                   ;
-;     Total combinational functions  ; N/A until Partition Merge                   ;
-;     Dedicated logic registers      ; N/A until Partition Merge                   ;
-; Total registers                    ; N/A until Partition Merge                   ;
-; Total pins                         ; N/A until Partition Merge                   ;
-; Total virtual pins                 ; N/A until Partition Merge                   ;
-; Total memory bits                  ; N/A until Partition Merge                   ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
-; Total PLLs                         ; N/A until Partition Merge                   ;
-; UFM blocks                         ; N/A until Partition Merge                   ;
-; ADC blocks                         ; N/A until Partition Merge                   ;
+; Total logic elements               ; 0                                           ;
+;     Total combinational functions  ; 0                                           ;
+;     Dedicated logic registers      ; 0                                           ;
+; Total registers                    ; 0                                           ;
+; Total pins                         ; 67                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -158,42 +171,434 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                        ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                    ; Library ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------+---------+
+; FrequencyDetector.v              ; yes             ; User Verilog HDL File        ; C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v        ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_divide.tdf                           ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/abs_divider.inc                          ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/sign_div_unsign.inc                      ;         ;
+; aglobal201.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc                           ;         ;
+; db/lpm_divide_oll.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/db/lpm_divide_oll.tdf      ;         ;
+; db/sign_div_unsign_nlh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/db/sign_div_unsign_nlh.tdf ;         ;
+; db/alt_u_div_ohe.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/db/alt_u_div_ohe.tdf       ;         ;
+; db/add_sub_t3c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/db/add_sub_t3c.tdf         ;         ;
+; db/add_sub_u3c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/db/add_sub_u3c.tdf         ;         ;
+; db/lpm_divide_itl.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/db/lpm_divide_itl.tdf      ;         ;
+; db/sign_div_unsign_klh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/db/sign_div_unsign_klh.tdf ;         ;
+; db/alt_u_div_ihe.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/db/alt_u_div_ihe.tdf       ;         ;
+; db/lpm_divide_lll.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/db/lpm_divide_lll.tdf      ;         ;
+; db/lpm_divide_ltl.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/db/lpm_divide_ltl.tdf      ;         ;
+; db/lpm_divide_vul.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/db/lpm_divide_vul.tdf      ;         ;
+; db/sign_div_unsign_1nh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/db/sign_div_unsign_1nh.tdf ;         ;
+; db/alt_u_div_cke.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/db/alt_u_div_cke.tdf       ;         ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary          ;
++---------------------------------------------+--------+
+; Resource                                    ; Usage  ;
++---------------------------------------------+--------+
+;                                             ;        ;
+; Total combinational functions               ; 0      ;
+; Logic element usage by number of LUT inputs ;        ;
+;     -- 4 input functions                    ; 0      ;
+;     -- 3 input functions                    ; 0      ;
+;     -- <=2 input functions                  ; 0      ;
+;                                             ;        ;
+; Logic elements by mode                      ;        ;
+;     -- normal mode                          ; 0      ;
+;     -- arithmetic mode                      ; 0      ;
+;                                             ;        ;
+; Total registers                             ; 0      ;
+;     -- Dedicated logic registers            ; 0      ;
+;     -- I/O registers                        ; 0      ;
+;                                             ;        ;
+; I/O pins                                    ; 67     ;
+;                                             ;        ;
+; Embedded Multiplier 9-bit elements          ; 0      ;
+;                                             ;        ;
+; Maximum fan-out node                        ; KEY[0] ;
+; Maximum fan-out                             ; 1      ;
+; Total fan-out                               ; 67     ;
+; Average fan-out                             ; 0.50   ;
++---------------------------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                      ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name ; Entity Name       ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------------+--------------+
+; |FrequencyDetector         ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 67   ; 0            ; 0          ; |FrequencyDetector  ; FrequencyDetector ; work         ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; LEDR[9]~reg0                           ; Stuck at GND due to stuck port data_in ;
+; LEDR[0]~reg0                           ; Stuck at VCC due to stuck port data_in ;
+; output_frequency[1..9]                 ; Stuck at GND due to stuck port data_in ;
+; LEDR[8]~reg0                           ; Stuck at GND due to stuck port data_in ;
+; digit0[3]                              ; Stuck at GND due to stuck port data_in ;
+; output_frequency[0]                    ; Stuck at GND due to stuck port data_in ;
+; digit0[1,2]                            ; Stuck at GND due to stuck port data_in ;
+; digit2[0]                              ; Stuck at GND due to stuck port data_in ;
+; digit0[0]                              ; Stuck at GND due to stuck port data_in ;
+; digit2[1..3]                           ; Stuck at GND due to stuck port data_in ;
+; digit1[0..3]                           ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 25 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                          ;
++---------------------+---------------------------+--------------------------------------------------------------------+
+; Register name       ; Reason for Removal        ; Registers Removed due to This Register                             ;
++---------------------+---------------------------+--------------------------------------------------------------------+
+; output_frequency[9] ; Stuck at GND              ; LEDR[8]~reg0, output_frequency[0], digit0[2], digit0[1], digit0[0] ;
+;                     ; due to stuck port data_in ;                                                                    ;
+; output_frequency[7] ; Stuck at GND              ; digit2[0], digit2[1], digit2[2], digit2[3]                         ;
+;                     ; due to stuck port data_in ;                                                                    ;
+; output_frequency[3] ; Stuck at GND              ; digit1[0]                                                          ;
+;                     ; due to stuck port data_in ;                                                                    ;
++---------------------+---------------------------+--------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 10             ; Untyped                ;
+; LPM_WIDTHD             ; 7              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_oll ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div2 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 10             ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_itl ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 10             ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_lll ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div1 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 10             ; Untyped                ;
+; LPM_WIDTHD             ; 7              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_ltl ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 10             ; Untyped                ;
+; LPM_WIDTHD             ; 10             ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_vul ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 67                          ;
+; cycloneiii_lcell_comb ; 2                           ;
+;     normal            ; 2                           ;
+;         0 data inputs ; 2                           ;
+;                       ;                             ;
+; Max LUT depth         ; 0.00                        ;
+; Average LUT depth     ; 0.00                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Tue Nov 14 11:38:56 2023
+    Info: Processing started: Thu Nov 16 12:13:11 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off FrequencyDetector -c FrequencyDetector
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
-Info (12021): Found 3 design units, including 3 entities, in source file frequencydetector.v
-    Info (12023): Found entity 1: ClockCounter File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 3
-    Info (12023): Found entity 2: InputPulseCounter File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 20
-    Info (12023): Found entity 3: FrequencyDetector File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 40
-Critical Warning (10846): Verilog HDL Instantiation warning at FrequencyDetector.v(29): instance has no name File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 29
-Critical Warning (10846): Verilog HDL Instantiation warning at FrequencyDetector.v(45): instance has no name File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 45
+Info (12021): Found 1 design units, including 1 entities, in source file frequencydetector.v
+    Info (12023): Found entity 1: FrequencyDetector File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 1
 Info (12127): Elaborating entity "FrequencyDetector" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at FrequencyDetector.v(48): truncated value with size 32 to match size of target (4) File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 48
-Info (12128): Elaborating entity "InputPulseCounter" for hierarchy "InputPulseCounter:comb_3" File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 45
-Info (12128): Elaborating entity "ClockCounter" for hierarchy "InputPulseCounter:comb_3|ClockCounter:comb_8" File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 29
-Warning (10240): Verilog HDL Always Construct warning at FrequencyDetector.v(9): inferring latch(es) for variable "count_reg", which holds its previous value in one or more paths through the always construct File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 9
-Warning (10230): Verilog HDL assignment warning at FrequencyDetector.v(15): truncated value with size 32 to match size of target (4) File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 15
-Info (10041): Inferred latch for "count_reg[0]" at FrequencyDetector.v(9) File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 9
-Info (10041): Inferred latch for "count_reg[1]" at FrequencyDetector.v(9) File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 9
-Info (10041): Inferred latch for "count_reg[2]" at FrequencyDetector.v(9) File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 9
-Info (10041): Inferred latch for "count_reg[3]" at FrequencyDetector.v(9) File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 9
-Error (10028): Can't resolve multiple constant drivers for net "count_reg[3]" at FrequencyDetector.v(11) File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 11
-Error (10029): Constant driver at FrequencyDetector.v(9) File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 9
-Error (10028): Can't resolve multiple constant drivers for net "count_reg[2]" at FrequencyDetector.v(11) File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 11
-Error (10028): Can't resolve multiple constant drivers for net "count_reg[1]" at FrequencyDetector.v(11) File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 11
-Error (10028): Can't resolve multiple constant drivers for net "count_reg[0]" at FrequencyDetector.v(11) File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 11
-Error (12152): Can't elaborate user hierarchy "InputPulseCounter:comb_3|ClockCounter:comb_8" File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 29
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 6 errors, 6 warnings
-    Error: Peak virtual memory: 4706 megabytes
-    Error: Processing ended: Tue Nov 14 11:39:06 2023
-    Error: Elapsed time: 00:00:10
-    Error: Total CPU time (on all processors): 00:00:12
+Warning (10036): Verilog HDL or VHDL warning at FrequencyDetector.v(13): object "num_period_width" assigned a value but never read File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 13
+Warning (10230): Verilog HDL assignment warning at FrequencyDetector.v(25): truncated value with size 32 to match size of target (26) File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 25
+Warning (10230): Verilog HDL assignment warning at FrequencyDetector.v(26): truncated value with size 32 to match size of target (26) File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 26
+Warning (10230): Verilog HDL assignment warning at FrequencyDetector.v(27): truncated value with size 32 to match size of target (26) File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 27
+Warning (10230): Verilog HDL assignment warning at FrequencyDetector.v(43): truncated value with size 26 to match size of target (10) File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 43
+Warning (10230): Verilog HDL assignment warning at FrequencyDetector.v(48): truncated value with size 26 to match size of target (10) File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 48
+Warning (10216): Verilog HDL warning at FrequencyDetector.v(51): expression attempts to divide or modulo by zero. Treated expression value as Don't Care (X) during synthesis. File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 51
+Warning (10230): Verilog HDL assignment warning at FrequencyDetector.v(51): truncated value with size 32 to match size of target (10) File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 51
+Warning (10230): Verilog HDL assignment warning at FrequencyDetector.v(60): truncated value with size 32 to match size of target (10) File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 60
+Warning (10230): Verilog HDL assignment warning at FrequencyDetector.v(67): truncated value with size 32 to match size of target (4) File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 67
+Warning (10230): Verilog HDL assignment warning at FrequencyDetector.v(68): truncated value with size 32 to match size of target (4) File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 68
+Warning (10230): Verilog HDL assignment warning at FrequencyDetector.v(69): truncated value with size 32 to match size of target (4) File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 69
+Warning (10235): Verilog HDL Always Construct warning at FrequencyDetector.v(75): variable "digit2" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 75
+Warning (10235): Verilog HDL Always Construct warning at FrequencyDetector.v(99): variable "digit1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 99
+Warning (10235): Verilog HDL Always Construct warning at FrequencyDetector.v(122): variable "digit0" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 122
+Warning (10136): Verilog HDL Module Declaration warning at FrequencyDetector.v(1): port "KEY" already exists in the list of ports File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 1
+Warning (10034): Output port "HEX3" at FrequencyDetector.v(4) has no driver File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 4
+Warning (10034): Output port "HEX4" at FrequencyDetector.v(4) has no driver File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 4
+Warning (10034): Output port "HEX5" at FrequencyDetector.v(4) has no driver File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 4
+Warning (10034): Output port "LEDR[7..1]" at FrequencyDetector.v(6) has no driver File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 6
+Info (278001): Inferred 5 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod1" File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 69
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div2" File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 68
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0" File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 68
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div1" File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 67
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0" File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 60
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod1" File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 69
+Info (12133): Instantiated megafunction "lpm_divide:Mod1" with the following parameter: File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 69
+    Info (12134): Parameter "LPM_WIDTHN" = "10"
+    Info (12134): Parameter "LPM_WIDTHD" = "7"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_oll.tdf
+    Info (12023): Found entity 1: lpm_divide_oll File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/db/lpm_divide_oll.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_nlh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_nlh File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/db/sign_div_unsign_nlh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_ohe.tdf
+    Info (12023): Found entity 1: alt_u_div_ohe File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/db/alt_u_div_ohe.tdf Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_t3c.tdf
+    Info (12023): Found entity 1: add_sub_t3c File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/db/add_sub_t3c.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_u3c.tdf
+    Info (12023): Found entity 1: add_sub_u3c File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/db/add_sub_u3c.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div2" File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 68
+Info (12133): Instantiated megafunction "lpm_divide:Div2" with the following parameter: File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 68
+    Info (12134): Parameter "LPM_WIDTHN" = "10"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_itl.tdf
+    Info (12023): Found entity 1: lpm_divide_itl File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/db/lpm_divide_itl.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_klh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_klh File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/db/sign_div_unsign_klh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_ihe.tdf
+    Info (12023): Found entity 1: alt_u_div_ihe File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/db/alt_u_div_ihe.tdf Line: 27
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod0" File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 68
+Info (12133): Instantiated megafunction "lpm_divide:Mod0" with the following parameter: File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 68
+    Info (12134): Parameter "LPM_WIDTHN" = "10"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_lll.tdf
+    Info (12023): Found entity 1: lpm_divide_lll File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/db/lpm_divide_lll.tdf Line: 25
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div1" File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 67
+Info (12133): Instantiated megafunction "lpm_divide:Div1" with the following parameter: File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 67
+    Info (12134): Parameter "LPM_WIDTHN" = "10"
+    Info (12134): Parameter "LPM_WIDTHD" = "7"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_ltl.tdf
+    Info (12023): Found entity 1: lpm_divide_ltl File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/db/lpm_divide_ltl.tdf Line: 25
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div0" File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 60
+Info (12133): Instantiated megafunction "lpm_divide:Div0" with the following parameter: File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 60
+    Info (12134): Parameter "LPM_WIDTHN" = "10"
+    Info (12134): Parameter "LPM_WIDTHD" = "10"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_vul.tdf
+    Info (12023): Found entity 1: lpm_divide_vul File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/db/lpm_divide_vul.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_1nh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_1nh File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/db/sign_div_unsign_1nh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_cke.tdf
+    Info (12023): Found entity 1: alt_u_div_cke File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/db/alt_u_div_cke.tdf Line: 27
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "HEX0[0]" is stuck at GND File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 4
+    Warning (13410): Pin "HEX0[1]" is stuck at GND File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 4
+    Warning (13410): Pin "HEX0[2]" is stuck at GND File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 4
+    Warning (13410): Pin "HEX0[3]" is stuck at GND File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 4
+    Warning (13410): Pin "HEX0[4]" is stuck at GND File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 4
+    Warning (13410): Pin "HEX0[5]" is stuck at GND File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 4
+    Warning (13410): Pin "HEX0[6]" is stuck at VCC File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 4
+    Warning (13410): Pin "HEX1[0]" is stuck at GND File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 4
+    Warning (13410): Pin "HEX1[1]" is stuck at GND File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 4
+    Warning (13410): Pin "HEX1[2]" is stuck at GND File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 4
+    Warning (13410): Pin "HEX1[3]" is stuck at GND File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 4
+    Warning (13410): Pin "HEX1[4]" is stuck at GND File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 4
+    Warning (13410): Pin "HEX1[5]" is stuck at GND File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 4
+    Warning (13410): Pin "HEX1[6]" is stuck at VCC File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 4
+    Warning (13410): Pin "HEX2[0]" is stuck at GND File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 4
+    Warning (13410): Pin "HEX2[1]" is stuck at GND File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 4
+    Warning (13410): Pin "HEX2[2]" is stuck at GND File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 4
+    Warning (13410): Pin "HEX2[3]" is stuck at GND File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 4
+    Warning (13410): Pin "HEX2[4]" is stuck at GND File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 4
+    Warning (13410): Pin "HEX2[5]" is stuck at GND File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 4
+    Warning (13410): Pin "HEX2[6]" is stuck at VCC File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 4
+    Warning (13410): Pin "HEX3[0]" is stuck at GND File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 4
+    Warning (13410): Pin "HEX3[1]" is stuck at GND File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 4
+    Warning (13410): Pin "HEX3[2]" is stuck at GND File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 4
+    Warning (13410): Pin "HEX3[3]" is stuck at GND File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 4
+    Warning (13410): Pin "HEX3[4]" is stuck at GND File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 4
+    Warning (13410): Pin "HEX3[5]" is stuck at GND File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 4
+    Warning (13410): Pin "HEX3[6]" is stuck at GND File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 4
+    Warning (13410): Pin "HEX4[0]" is stuck at GND File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 4
+    Warning (13410): Pin "HEX4[1]" is stuck at GND File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 4
+    Warning (13410): Pin "HEX4[2]" is stuck at GND File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 4
+    Warning (13410): Pin "HEX4[3]" is stuck at GND File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 4
+    Warning (13410): Pin "HEX4[4]" is stuck at GND File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 4
+    Warning (13410): Pin "HEX4[5]" is stuck at GND File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 4
+    Warning (13410): Pin "HEX4[6]" is stuck at GND File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 4
+    Warning (13410): Pin "HEX5[0]" is stuck at GND File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 4
+    Warning (13410): Pin "HEX5[1]" is stuck at GND File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 4
+    Warning (13410): Pin "HEX5[2]" is stuck at GND File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 4
+    Warning (13410): Pin "HEX5[3]" is stuck at GND File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 4
+    Warning (13410): Pin "HEX5[4]" is stuck at GND File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 4
+    Warning (13410): Pin "HEX5[5]" is stuck at GND File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 4
+    Warning (13410): Pin "HEX5[6]" is stuck at GND File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 4
+    Warning (13410): Pin "LEDR[0]" is stuck at VCC File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 23
+    Warning (13410): Pin "LEDR[1]" is stuck at GND File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 6
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 6
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 6
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 6
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 6
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 6
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 6
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 23
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 23
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 15 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[0]" File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 3
+    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 3
+    Warning (15610): No output dependent on input pin "KEY[0]__duplicate"
+    Warning (15610): No output dependent on input pin "KEY[1]__duplicate"
+    Warning (15610): No output dependent on input pin "SW[0]" File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 8
+    Warning (15610): No output dependent on input pin "SW[1]" File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 8
+    Warning (15610): No output dependent on input pin "SW[2]" File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 8
+    Warning (15610): No output dependent on input pin "SW[3]" File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 8
+    Warning (15610): No output dependent on input pin "SW[4]" File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 8
+    Warning (15610): No output dependent on input pin "SW[5]" File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 8
+    Warning (15610): No output dependent on input pin "SW[6]" File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 8
+    Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 8
+    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 8
+    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 8
+    Warning (15610): No output dependent on input pin "MAX10_CLK1_50[0]" File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 2
+Info (21057): Implemented 67 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 15 input pins
+    Info (21059): Implemented 52 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 90 warnings
+    Info: Peak virtual memory: 4750 megabytes
+    Info: Processing ended: Thu Nov 16 12:13:21 2023
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:12
 
 

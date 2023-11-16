@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at FrequencyDetector.v(62): always construct contains both blocking and non-blocking assignments File: C:/Users/ryank/OneDrive/Documents/School/ECE215/ECE215_Final_Project/FrequencyDetector.v Line: 62

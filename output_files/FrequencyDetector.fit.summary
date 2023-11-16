@@ -1,15 +1,15 @@
-Fitter Status : Successful - Thu Nov 09 13:41:39 2023
+Fitter Status : Successful - Thu Nov 16 12:13:30 2023
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : FrequencyDetector
 Top-level Entity Name : FrequencyDetector
 Family : MAX 10
 Device : 10M50DAF484C7G
 Timing Models : Final
-Total logic elements : 29 / 49,760 ( < 1 % )
-    Total combinational functions : 26 / 49,760 ( < 1 % )
-    Dedicated logic registers : 12 / 49,760 ( < 1 % )
-Total registers : 12
-Total pins : 10 / 360 ( 3 % )
+Total logic elements : 1 / 49,760 ( < 1 % )
+    Total combinational functions : 1 / 49,760 ( < 1 % )
+    Dedicated logic registers : 0 / 49,760 ( 0 % )
+Total registers : 0
+Total pins : 67 / 360 ( 19 % )
 Total virtual pins : 0
 Total memory bits : 0 / 1,677,312 ( 0 % )
 Embedded Multiplier 9-bit elements : 0 / 288 ( 0 % )
