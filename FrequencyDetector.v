@@ -22,56 +22,89 @@ module FrequencyDetector(MAX10_CLK1_50, KEY, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5,
 	
 	always @ (posedge MAX10_CLK1_50)
 	begin
-		count_pos_pos <= count_pos_pos + 1;
-		full_width_count <= count_pos_pos;
-		count_pos_neg <= count_pos_neg + 1;
-		
-		if (SW[0] > 0) begin
-			edgeFront <= KEY[1]; end
-		else begin
-			edgeFront <= GPIO[0]; end
-		edgeBack <= edgeFront;
-		edgePos <= (~edgeFront) & edgeBack;
-		edgeNeg <= edgeFront & (~edgeBack);
-		
-		if (edgePos) begin
-			count_pos_neg <= 0;
+		if (SW[1] == 1) begin
 			count_pos_pos <= 0;
-			num_period_width <= full_width_count;
+			count_pos_neg <= 0;
+			output_frequency <= 0;
+			output_pulse_width <= 0;
+			num_period_width <= 0;
+			full_width_count <= 0;
+			num_pulse_width <= 0;
+			num_period_width <= 0;
+			
+			
+			digit0 <= 0;
+			digit1 <= 0;
+			digit2 <= 0;
+			digit3 <= 0;
+			digit4 <= 0;
+			digit5 <= 0;
+			LEDR <= 8'b000000000;
+			
+			
 		end
-		
-		if (edgeNeg) begin
-			num_pulse_width <= count_pos_neg;
-		end
-		
-		output_pulse_width <= (100 * num_pulse_width) / num_period_width;
-		digit0 <= output_pulse_width / 100;
-		digit1 <= (output_pulse_width / 10) % 10;
-		digit2 <= output_pulse_width % 10;
-
-		output_frequency <= 50000000 / num_period_width;
-
-		if (output_frequency >= 1000000) begin
-			digit3 <= output_frequency / 100000000;
-			digit4 <= (output_frequency / 10000000) % 10;
-			digit5 <= (output_frequency % 10000000)/1000000;
-			LEDR[2] <= 0;
-			LEDR[1] <= 0;
-			LEDR[0] <= 1;end
-		else if (output_frequency >= 1000) begin
-			digit3 <= output_frequency / 100000;
-			digit4 <= (output_frequency / 10000) % 10;
-			digit5 <= (output_frequency % 10000)/1000;
-			LEDR[2] <= 0;
-			LEDR[1] <= 1;
-			LEDR[0] <= 0;end
 		else begin
-			digit3 <= output_frequency / 100;
-			digit4 <= (output_frequency / 10) % 10;
-			digit5 <= output_frequency % 10;
-			LEDR[2] <= 1;
-			LEDR[1] <= 0;
-			LEDR[0] <= 0;
+			
+			count_pos_pos <= count_pos_pos + 1;
+			full_width_count <= count_pos_pos;
+			count_pos_neg <= count_pos_neg + 1;
+			if (count_pos_pos > 50000000) begin
+				count_pos_pos <= 0; end
+			if (count_pos_neg > 50000000) begin
+				count_pos_neg <= 0; end
+			
+			if (SW[0] > 0) begin
+				edgeFront <= KEY[1]; end
+			else begin
+				edgeFront <= ~GPIO[0]; end
+			edgeBack <= edgeFront;
+			edgePos <= (~edgeFront) & edgeBack;
+			edgeNeg <= edgeFront & (~edgeBack);
+			
+			
+			
+			if (edgeNeg) begin
+				num_pulse_width <= count_pos_neg;
+			end
+			
+			if (edgePos) begin
+				count_pos_neg <= 0;
+				count_pos_pos <= 0;
+				num_period_width <= full_width_count;
+				
+				
+				
+			end
+			
+			output_pulse_width <= (100 * num_pulse_width) / num_period_width;
+			digit0 <= output_pulse_width / 100;
+			digit1 <= (output_pulse_width / 10) % 10;
+			digit2 <= output_pulse_width % 10;
+
+			output_frequency <= 50000000 / num_period_width;
+
+			if (output_frequency >= 1000000) begin
+				digit3 <= output_frequency / 100000000;
+				digit4 <= (output_frequency / 10000000) % 10;
+				digit5 <= (output_frequency % 10000000)/1000000;
+				LEDR[2] <= 0;
+				LEDR[1] <= 0;
+				LEDR[0] <= 1;end
+			else if (output_frequency >= 1000) begin
+				digit3 <= output_frequency / 100000;
+				digit4 <= (output_frequency / 10000) % 10;
+				digit5 <= (output_frequency % 10000)/1000;
+				LEDR[2] <= 0;
+				LEDR[1] <= 1;
+				LEDR[0] <= 0;end
+			else begin
+				digit3 <= output_frequency / 100;
+				digit4 <= (output_frequency / 10) % 10;
+				digit5 <= output_frequency % 10;
+				LEDR[2] <= 1;
+				LEDR[1] <= 0;
+				LEDR[0] <= 0;
+			end
 		end
 		
 	end
